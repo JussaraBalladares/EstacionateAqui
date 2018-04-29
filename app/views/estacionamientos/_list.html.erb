@@ -1,0 +1,33 @@
+<div id="filterrific_results" class="box-body table-responsive no-padding">
+    
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Distrito</th>
+                <th>Tipo</th>
+                <th>Ubicación</th>
+                <th>Descripción</th>
+                <th>Dirección</th>
+                <th>Teléfono</th>
+                <th>Precio Hora</th>
+                <th></th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <% estacionamientos.each do |varEstacionamiento| %>
+            <tr>
+                <td><%= varEstacionamiento.distrito.descripcion %></td>
+                <td><%= varEstacionamiento.tipo.descripcion %></td>
+                <td><%= varEstacionamiento.ubicacion.descripcion %></td>
+                <td><%= varEstacionamiento.descripcion %></td>
+                <td><%= varEstacionamiento.direccion %></td>
+                <td><%= varEstacionamiento.telefono %></td>
+                <td><%= varEstacionamiento.precioporhora %></td>
+                <td><%= link_to 'Eliminar', varEstacionamiento, method: :delete, data: { confirm: '¿Esta seguro de eliminar el registro?' } %></td>
+            </tr>
+            <% end %>
+        </tbody>
+    </table>
+</div>
+<!-- /.box-body -->

@@ -1,0 +1,104 @@
+<section class="content-header">
+    <h1>
+        Registro de datos
+    </h1>
+</section>
+<section class="content">
+
+    <div class="row">
+        <!-- left column -->
+        <div class="col-md-12">
+            <!-- general form elements -->
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Datos Generales</h3>
+                </div>
+                <!-- /.box-header -->
+                <form role="form">
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <div class="box-body">
+                                <label for="nombres">Nombres:</label>
+                                <input type="text" class="form-control" id="nombres" placeholder="Ingrese sus nombres" name="nombres">
+                            </div>
+                            <div class="box-body">
+                                <label for="apepat">Apellido Paterno:</label>
+                                <input type="text" class="form-control" id="apepat" placeholder="Ingrese Apellido Paterno" name="apepat">
+                            </div>
+                            <div class="box-body">
+                                <label for="apemat">Apellido Materno:</label>
+                                <input type="text" class="form-control" id="apemat" placeholder="Ingrese Apellido Materno" name="apemat">
+                            </div>
+                            <div class="box-body">
+                                <label for="sexo">Sexo:</label>
+                                <select class="form-control" id="sexo">
+                                    <option>Masculino</option>
+                                    <option>Femenino</option>
+                                    <option>Otro</option>
+                                </select>
+                            </div>
+                            <div class="box-body">
+                                <label for="ce">Correo Electronico:</label>
+                                <input type="email" class="form-control" id="email" placeholder="email@upc.edu.pe" name="ce">
+                                <label for="cce">Confirmar Correo Electronico:</label>
+                                <input type="email" class="form-control" id="email" placeholder="email@upc.edu.pe" name="cce">
+                            </div>
+                            <div class="box-body">
+                                <label for="tdoc">Tipo de Documento</label>
+                                <select class="form-control" id="tdoc">
+                                    <option>DNI</option>
+                                    <option>Pasaporte</option>
+                                    <option>Carnet de Extranjeria</option>
+                                </select>
+                            </div>
+                            <div class="box-body">
+                                <label for="dist">Distrito:</label>
+                                <input type="text" class="form-control" id="dist" placeholder="Ingrese Distrito" name="dist">
+                            </div>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="box-body">
+                                <label for="ndi">Numero de documento de Identidad: </label>
+                                <input type="text" class="form-control" id="ndi" placeholder="Ingrese Numero de documento de Identidad" name="ndi">
+                            </div>
+                            <div class="box-body">
+                                <label for="optUsu">Tipo de Usuario: </label>
+                                <div class="radio">
+                                    <label><input type="radio" name="optProp">Propietario</label>
+                                </div>
+                                <div class="radio">
+                                    <label><input type="radio" name="optCliente">Cliente</label>
+                                </div>
+                            </div>
+                            <div class="box-body">
+                                <label for="contrasenia">Contraseña:</label>
+                                <input type="password" class="form-control" id="contrasenia" placeholder="email@upc.edu.pe" name="contrasenia">
+                                <label for="ccontrasenia">Confirmar Contraseña:</label>
+                                <input type="password" class="form-control" id="ccontrasenia" placeholder="email@upc.edu.pe" name="ccontrasenia">
+                            </div>
+                            <div class="box-body">
+                                <label for="fnacimiento">Fecha de nacimiento:</label>
+                                <input type="date" name="fnacimiento" class="form-control">
+                            </div>
+                            <div class="box-body">
+                                <label for="celular">Celular:</label>
+                                <input type="text" class="form-control" id="celular" placeholder="000000000" name="celular">
+                            </div>
+                            <div class="box-body">
+                                <label for="dire">Direccion: </label>
+                                <input type="text" class="form-control" id="dire" placeholder="Ingrese Direccion" name="dire">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-footer">
+                        <button type="submit" class="btn btn-primary pull-right">Guardar</button>
+                        <!--<%= form.submit "Guardar", :class=>"btn btn-primary pull-right", data: { confirm: '¿Esta seguro de guardar los datos?' } %>-->
+                    </div>
+                </form>
+                <!-- form start -->
+            </div>
+            <!-- /.box -->
+        </div>
+        <!--/.col (left) -->
+    </div>
+</section>

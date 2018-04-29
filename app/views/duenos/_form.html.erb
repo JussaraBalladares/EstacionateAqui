@@ -1,0 +1,17 @@
+<%= form_with(model: dueno, local: true) do |form| %>
+  <% if dueno.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(dueno.errors.count, "error") %> prohibited this dueno from being saved:</h2>
+
+      <ul>
+      <% dueno.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

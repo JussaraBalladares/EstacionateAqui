@@ -1,0 +1,125 @@
+<section class="content-header">
+    <h1>
+        Registrar Estacionamiento
+    </h1>
+</section>
+<section class="content">
+
+    <%= form_with(model: @Estacionamiento, local: true) do |form| %>
+
+        <div class="row">
+            <!-- left column -->
+            <div class="col-md-12">
+                <!-- general form elements -->
+                <div class="box box-primary">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Datos Generales</h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <!-- form start -->
+                    <form role="form">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="box-body">
+                                    <div class="form-group">
+                                        <label for="txtNombre">Descripción</label>
+                                        <%= form.text_field :descripcion, id: :estacionamiento_descripcion, :class=>"form-control", :placeholder=>"Ingrese una descripción", required: true, maxlength: 50 %>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="box-body">
+                                    <div class="form-group">
+                                        <label for="txtDireccion">Dirección</label>
+                                        <%= form.text_field :direccion, id: :estacionamiento_direccion, :class=>"form-control", :placeholder=>"Ingrese una dirección" , required: true, maxlength: 150 %>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="box-body">
+                                    <div class="form-group">
+                                        <label for="txtDistrito">Distrito</label>
+                                        <%= form.collection_select :distrito_id, Distrito.order(:descripcion), :id, :descripcion , {}, {class: "form-control"} %>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="box-body">
+                                    <div class="form-group">
+                                        <label for="txtDireccionMaps">Dirección Maps</label>
+                                        <%= form.text_field :direccionmap, id: :estacionamiento_direccionmap, :class=>"form-control", :placeholder=>"Ingrese una dirección maps", required: true, maxlength: 30 %>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="box-body">
+                                    <div class="form-group">
+                                        <label for="txtDimension">Dimensiones(Ancho x Largo x Alto)</label>
+                                        <%= form.text_field :dimension, id: :estacionamiento_dimension, :class=>"form-control", :placeholder=>"Ingrese una dimensión", required: true, maxlength: 30 %>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="box-body">
+                                    <div class="form-group">
+                                        <label for="txtTelefono">Telefono Fijo (Opcional)</label>
+                                        <%= form.text_field :telefono, id: :estacionamiento_telefono, :class=>"form-control", :placeholder=>"Ingrese un teléfono", required: true, maxlength: 20, type: "number" %>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="box-body">
+                                    <div class="form-group">
+                                        <label for="txtPrecio">Precio Por Hora</label>
+                                        <%= form.text_field :precioporhora, id: :estacionamiento_precioporhora, :class=>"form-control", :placeholder=>"Ingrese un precio por hora", required: true, maxlength: 10, :value => (number_to_currency(form.object.precioporhora, :precision => 2) || 0) %>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="box-body">
+                                    <div class="form-group">
+                                        <label for="txtTipo">Tipo</label>
+                                        <%= form.collection_select :tipo_id, Tipo.order(:descripcion), :id, :descripcion , {}, {class: "form-control"} %>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-3">
+                                <div class="box-body">
+                                    <div class="form-group">
+                                        <label for="txtUbicacion">Ubicacion</label>
+                                        <%= form.collection_select :ubicacion_id, Ubicacion.order(:descripcion), :id, :descripcion , {}, {class: "form-control"} %>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="box-body">
+                                    <div class="form-group">
+                                        <label for="exampleInputFile">Adjuntar Foto</label>
+                                        <input type="file" id="exampleInputFile">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- /.box-body -->
+
+                        <div class="box-footer">
+                            <button type="submit" class="btn btn-primary pull-right">Guardar</button>
+                            <!--<%= form.submit "Guardar", :class=>"btn btn-primary pull-right", data: { confirm: '¿Esta seguro de guardar los datos?' } %>-->
+                        </div>
+                    </form>
+                </div>
+                <!-- /.box -->
+            </div>
+            <!--/.col (left) -->
+        </div>
+        <!-- /.row -->
+        <% end %>
+</section>
